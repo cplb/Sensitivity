@@ -1,111 +1,48 @@
 \section{Introduction}
+There are many ways of describing both the sensitivitiy of a gravitational wave (GW) detector and the strength of a GW source as a function of frequency. It is desirable to have a consistent convention between detectors and sources which is applicable across all frequencies and which allows information about both detectors and sources to be plotted on the same graph. Another desirable feature of such a plot is that the detectors and sources are characterised in such a way that their relative heights gives a measure of the sources' detectability. 
 
-There are many ways of describing both the \emph{sensitivity} of a gravitational wave \emph{(GW)} detector and the strength of a \emph{GW} source as a function of frequency. It is desirable to have a consistent convention between detectors and sources which is applicable across all frequencies and which allows both to be plotted on the same graph. Another desirable feature of such a plot is that the detectors and sources are \emph{characterised} in such a way that their relative heights gives a measure of \emph{sources'} detectability.
+In this work we tackle the differing conventions common in GW astronomy. When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parameters based upon the strain: the characteristic strain, the power spectral density and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference to the new and old alike. In the following two sections we present a summary of the various conventions and the relationships between them. A list of detectors (current and future) is given in section~\ref{sec:detectors} and a list of different GW sources is given in section~\ref{sec:sources}. In \ref{app:a} several example sensitivity curves are presented; these are also made available online.
 
-\emph{In this work we tackle the differing conventions common in GW astronomy. The amplitude of a GW is a strain, a dimensionless quantity. When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parameters based upon the starin: the characteristic strain, the power spectral density and the energy spectrum. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference to the new and old alike.}
 
-In the \emph{following} section we present a summary of the various conventions and the relationships between them. A \emph{(near)} exhaustive list of different \emph{GW} sources is given in section~\ref{sec:sources} and a list of detectors (past, present and future) is given in section~\ref{sec:detectors}. In \ref{sec:a} \emph{we present example sensitivity curves.} \emph{These} are also made available online.
 
 \section{Characteristic amplitudes}
-
-A source of gravitational waves radiates in two polarisation states with amplitudes $h_{+}$ and $h_{\times}$, the sensitivity of our detector to each of these states will depend upon the relative orientations of the source and detector. The most obvious quantity related to the detectability of a GW is the average amplitude,
-\begin{equation}
-\label{eq:h0} h_{0} = \sqrt{\left< h_{+}^{2}+h_{\times}^{2} \right>}=\frac{1}{2}\left< \textrm{ r.m.s. amplitude } \right>.
-\end{equation}
-The angled brackets define averaging over all directions and over a wave period (the factor of $1/2$ comes from the time averaging). This average strain amplitude does \emph{not} meet the criteria described above\emph{:} for an inspiralling source the instantaneous amplitude can be well below the noise level in the detector even when the source is still detectable. This apparent discrepancy is because the \emph{inspiral continues over an extended period of time which allows the signal-to-noise ratio} $\varrho$ \emph{to be integrated up to a detectable level}. \emph{To account for this} \citet{FinnThorne} define the characteristic strain $h_{c}$ from
-\begin{equation}\label{eq:hc}
-\varrho_{\textrm{r.m.s.}}^{2} = \int \frac{\textrm{d}f}{f}\; \left(\frac{h_{c}(f)}{h_{n}(f)}\right)^{2} = \int \textrm{d}\left(\ln f\right)\; \left(\frac{h_{c}(f)}{h_{n}(f)}\right)^{2},
-\end{equation}
-where $h_{n}$ is the detectors sky-averaged r.m.s.\ noise in a bandwidth equal to $f$. \emph{This} is related to the \emph{sky-averaged} one-sided \emph{noise} power spectral density \emph{by}
-\begin{equation}\label{eq:powerspectraldensity}
-h_{n}(f)=\sqrt{fS_{n}(f)}.
-\end{equation}
-An alternative convention is to use the \emph{two-sided poser spectral density} $S^{(2)}_{n}(f)=\frac{1}{2}S_{n}(f)$.
-
 \subsection{Characteristic strain}
 
-\emph{To} complete the picture it is necessary to relate the two $h_{c}$ and $h_{0}$ \emph{to} satisfy (\ref{eq:hc}). The \emph{means} to do this depends upon the source. \emph{The strain amplitudes} $h_{0}$, $h_{c}$ and $h_{n}$ are all dimensionless, while $S_{n}$ has units of inverse frequency. When plotting sources on the same diagram it is necessary to have a consistent convention, so the relationship between $h_{c}$ and $h_{0}$ is important\emph{;} to emphasise this we give it a suitably pompous name\emph{:} the vociferosity relation.
-
-\emph{Inspiralling binaries source spends a variable amount of time in each frequency band.}. If $\phi$ is the orbital phase then the length of time spent at frequency $f$ is given
-\begin{equation}\label{eq:inspiral}
- \frac{1}{2\pi}\frac{\textrm{d}\phi}{\textrm{d}\left(\log f\right)} = \frac{f}{2\pi}\frac{\textrm{d}\phi}{\textrm{d}f}=\frac{f^{2}}{\dot{f}}. \textrm{Divide by phi dot?}
+A source of GWs radiates in two polarisation states with amplitudes $h_{+}$ and $h_{\times}$; the sensitivity of our detector to each of these states will depend upon the relative orientations of the source and detector. The most obvious quantity related to the detectability of a GW is the average strain amplitude,
+\begin{equation}\label{eq:h0} h_{0}=\sqrt{\left< h_{+}^{2}+h_{\times}^{2} \right>}=\frac{1}{2}\left( \textrm{ r.m.s. amplitude } \right) \quad.\end{equation}
+The angled brackets define averaging over all directions and over a wave period (the factor of $1/2$ comes from time averaging). This average strain does \emph{not} meet the criteria described above: for an inspiralling source the instantaneous amplitude can be well below the noise level in the detector even when the source is still detectable. This apparent discrepancy is because the inspiral continues over many orbits which allows the signal-to-noise ratio, $\varrho$, to accumulate to a detectable level. To account for this the \emph{characteristic strain}, $h_{c}$, is defined as
+\begin{equation}\label{eq:hc} 
+\varrho_{\textrm{r.m.s.}}^{2}= \int_{0}^{\infty}\textrm{d}f\; \frac{4\left|\tilde{h_{0}}(f)\right|^{2}}{S_{n}(f)} =\int_{-\infty}^{\infty} \textrm{d}\left(\log f\right)\; \left(\frac{h_{c}(f)}{h_{n}(f)}\right)^{2} \quad,
 \end{equation}
-This leads to the definition of characteristic strain for inspirals of \citep{FinnThorne}
-\begin{equation}\label{eq:hc1}
- h_{c}(f)=h_{0}(f)\sqrt{\frac{2f^{2}}{\dot{f}}},
-\end{equation}
-where the factor of two is inserted to cancel the two arising in (\ref{eq:h0}). \emph{This is the vociferosity relation for inspiralling sources.}
+where $h_{n}$ is the detector's sky averaged r.m.s. noise in a bandwidth equal to $f$. This is related to the sky averaged \emph{one-sided} noise power spectral density by
+\begin{equation}\label{eq:powerspectraldensity} S_{n}(f)=\frac{h_{n}(f)^{2}}{f} \quad . \end{equation}
+An alternative convention is to use the \emph{two-sided} power spectral density, $S^{(2)}_{n}(f)=\frac{1}{2}S_{n}(f)$. To complete the picture it is necessary to relate the two strains, $h_{c}$ and $h_{0}$, in a manner which satisfies (\ref{eq:hc}). The means to do this will depend upon the source. In attempting to plot all sources on the same diagram it is necessary to have a consistent convention for $h_{c}$. The important relationship between $h_{c}$ and $h_{0}$ is derived for various types of source in section \ref{sec:voc}. It should be noted that the strain amplitudes $h_{0}$, $h_{c}$ and $h_{n}$ are all dimensionless, while $S_{n}$ has units of inverse frequency. 
 
-\emph{What about burst sources?}
+One sensible choice of quantities to plot on a sensitivity curve is $h_{n}$ for the detector and $h_{c}$ for the source (see figure \ref{fig:hc}). Using this convention the area between the source and detector curves is related to the signal-to-noise ratio via (\ref{eq:hc}). This convention allows the reader to ``integrate by eye" for a given detector to see how detectable a given source is. An additional advantage of this convention is that the values on the strain axis for the detector curve correspond to the noise amplitude in the detector. One downside to plotting characteristic strain is that the values on the strain axis do not directly relate to the amplitude of the waves from the source.
 
-So one sensible choice of quantities to plot on a sensitivity curve would be $h_{n}$ for the detector and $h_{c}$ for the source, see figure \ref{fig:hc}. Using this convention, if the frequency is plotted on a logarithmic scale and the strain on a linear scale then the area between the source and detector line represents the signal to noise ratio. This convention allows the reader to ``Integrate by eye'' for a given detector to see how detectable a given source is. An \emph{additional} advantage of this convention is that the values on the strain axis for the detector curve correspond to the noise amplitude in the detector. The one downside to plotting characteristic strain is that the values on the strain axis do not directly relate to the amplitude of the waves from the source.
 
-\subsection{Power spectral density}
-
-Another common quantity to plot on sensitivity curves for both detectors and sources is the square root of the power spectral density (see figure \ref{fig:S}), which from (\ref{eq:powerspectraldensity}) is given by,
-\begin{eqnarray}\label{eq:temp1}
- \sqrt{{S}_{n}(f)}&=h_{n}(f)f^{-1/2} \quad\textrm{for detectors,} \nonumber \\
-\sqrt{S_{h}(f)}&=h_{c}(f)f^{-1/2} \quad\textrm{for sources.}
+\subsection{Power spectral density}\label{sec:psd}
+Another common quantity to plot on sensitivity curves for both detectors and sources is the square root of the power spectral density (see figure \ref{fig:S}), which from (\ref{eq:powerspectraldensity}) is given by
+\begin{equation}\label{eq:temp1} \sqrt{S_{n}(f)}=h_{n}(f)f^{-1/2} \quad .\end{equation}
+This quantity has one advantage over characteristic strain: integrating $S_{n}$ (multiplied by the detector response function, which is typically of order unity) over all frequencies gives the mean square noise strain in the detector. Let $n(t)$ be the instantaneous noise strain, due to a background say, and it's Fourier transform $\tilde{n}(f)$. The Fourier transform of the measured noise in the detector is given by the noise times a frequency response function, $\tilde{N}(f)={\cal{R}}(f)\tilde{n}(f)$. The mean square noise amplitude in the detector is then given by
+\begin{eqnarray} \label{eq:meansquare}
+\left< N^{2} \right> &= \lim_{\tau \rightarrow \infty} \frac{1}{2\tau} \int_{-\tau}^{\tau}\textrm{d}t\; N(t)^{2} \nonumber \\
+&=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}\int_{0}^{\infty}\textrm{d}f\;\left|\tilde{N}(f)\right|^{2} \nonumber\\
+&= \int_{0}^{\infty}\textrm{d}f\; S_{n}(f){\cal{R}}(f)^{2} \quad ,
 \end{eqnarray}
-This has one advantage over characteristic strain\emph{:} integrating $S_{n}$ (\emph{multiplied by the} detector response function, which is \emph{typically} of order unity) over all frequencies gives the mean square noise strain in the detector. If the instantaneous noise strain in the detector is $n(t)$, due to a background say, then \emph{its} Fourier transform is defined via
-\begin{equation}\label{eq:FT}
-\tilde{n}(f)=\int_{-\infty}^{\infty}\textrm{d}t\; n(t)\exp \left(-2\pi ift\right).
-\end{equation}
-Since $n(t)$ is dimensionless, $\tilde{n}(f)$ has units of inverse frequency. The Fourier transform of the measured noise in the detector $N(t)$ is given by the noise times a frequency response function
-\begin{equation}\tilde{N}(f)={\cal{R}}(f)\tilde{n}(f).
-\end{equation}
-The mean square noise amplitude in the detector is then given by
-\begin{equation}
-\left< N(t)^{2} \right> = \lim_{\tau \rightarrow \infty} \frac{1}{2\tau} \int_{-\tau}^{\tau}\textrm{d}t\;n(t)^{2}=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}\int_{0}^{\infty}\textrm{d}f\;\left|\tilde{n}(f)\right|^{2},
-\end{equation}
-\emph{using} the Wiener-Kinchin theorem. It then follows that
-\begin{equation}\label{eq:meansquare}
-\left< N(t)^{2} \right> = \int_{0}^{\infty}\textrm{d}f\; S_{n}(f){\cal{R}}(f)^{2},
-\end{equation}
-where the power spectral density is given by
-\begin{equation}\label{eq:ps}
-S_{n}(f)=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}\left|\tilde{n}(f)\right|^{2}.
-\end{equation}
-It is straightforward to show that (\ref{eq:ps}) is consistent with the previous definition in (\ref{eq:powerspectraldensity}). Let $\tilde{n}(f_{i})=h_{n}(f)\delta (f_{i}-f)$ and substitute this into (\ref{eq:ps}),
-\begin{equation} S_{n}(f)=\lim_{\tau \rightarrow \infty}\frac{1}{\tau}\left| h_{n}(f)\delta (f_{i}-f) \right|^{2} \end{equation}
-\begin{equation} S_{n}(f)=\frac{h_{n}(f)^{2}}{f} \end{equation}
-\begin{equation} h_{n}(f)=\sqrt{fS_{n}(f)} \quad . \end{equation}
-Equation \ref{eq:meansquare} is \emph{the} reason \emph{that} $\sqrt{S_{n}}$ is sometimes called the strain noise \citep{Phinney}. This is probably the most commonly used quantity on sensitivity curves\emph{;} however, in several ways it is much less appealing than characteristic strain. \emph{First}, the height of the source above the detector curve is no longer is directly related to the \emph{signal-to-noise} ratio. Second, although the integral of $\sqrt{S_{n}}/f$ is a strain, we are plotting spectral quantities and $\sqrt{S_{n}}$ is not straightforwardly related to the strain \emph{measured by} the detector.
+using the Wiener-Kinchin theorem. Where the power spectral density is defined by
+\begin{equation}\label{eq:ps} S_{n}(f)=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}\left|\tilde{n}(f)\right|^{2} \quad . \end{equation}
+Comparing (\ref{eq:ps}) with (\ref{eq:temp1}) gives the noise strain in terms of the Fourier transform.
+\begin{equation} h_{n}(f)^{2}=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}f\left| \tilde{n}(f) \right|^{2} \end{equation}
+Equation (\ref{eq:meansquare}) is the reason $\sqrt{S_{n}}$ is sometimes called the strain noise, \cite{Phinney}. This is the most commonly used quantity on sensitivity curves. However in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the signal-to-noise ratio.
 
 \subsection{Energy density}
-
-A third quantity which is sometimes used is the energy density in GWs $S_h$. This is not to be confused with the quantity $S_{\textrm{E}}$ defined by \citet[e.g.]{HellingsDowns}. This is the spectral energy density, which is the energy per unit volume per unit frequency and is related to $S_{h}$ via
-\begin{equation}\label{eq:spectralenergydensity}
-S_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f).
+A third quantity which is sometimes used is the spectral energy density in GWs, $S_{\textrm{E}}$ (not to be confused with $S_{h}$ defined in section \ref{sec:psd}). The spectral energy density is the energy per unit volume, per unit frequency and is related to $S_{h}$ via
+\begin{equation}\label{eq:spectralenergydensity} S_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \quad , \end{equation}
+\cite{HellingsDowns}. It is usual to define the dimensionless quantity $\Omega_{\textrm{GW}}$ as the energy density per logarithmic frequency interval normalised to the critical density of the universe,
+\begin{equation}\label{eq:omega} 
+\Omega_{\textrm{GW}}(f)=\frac{fS_{\textrm{E}}(f)}{\rho_{c}c^{2}}=\frac{\pi}{4G\rho_{c}}f^{2}h_{c}(f)^{2}=\frac{\pi}{4G\rho_{c}}f^{3}S_{h}(f)  \quad .
 \end{equation}
-\emph{This needs to be completely rewritten:} So the total energy density of gravitational waves is given by the integral in (\ref{eq:epsilon}), where the quantity $\Omega_{\textrm{GW}}$ has been defined as the spectral energy density per unit logarithmic frequency interval normalised by the critical energy density of the universe to make it dimensionless.\footnote{Just to add to the potential confusion there is another power spectrum quantity widely used in the pulsar timing community, usually denoted $P(f)$, which is the power spectra of timing residuals. This is related to the quantities described here via $P(f)= {h_{c}(f)^{2}}/({12\pi^{2}f^{3}})$ \citep{Jenet}.}
-\begin{equation}\label{eq:omega} \Omega_{\textrm{GW}}(f)=\frac{fS_{\textrm{E}}(f)}{\rho_{c}c^{2}}=\frac{\pi}{4G\rho_{c}}f^{2}h_{c}(f)^{2}=\frac{\pi}{4G\rho_{c}}f^{3}S_{h}(f)  \end{equation}
-\begin{equation}\label{eq:epsilon} \textrm{energy density}=\int \textrm{d}\left( \log f \right)\; \Omega_{\textrm{GW}}(f) \rho_{c}c^{2}\end{equation}
-The critical density of the universe is $\rho_{c}= {3H^{2}}/({8\pi G})$, where $H$ is the Hubble constant, which is commonly parametrised as $H=_{100}\times 100\, \textrm{km}\,\textrm{s}^{-1}\,\textrm{Mpc}^{-1}$. This $h$ has nothing to do with strain. The most common quatity related to energy density to be plotted on sensitivity curves is $\Omega_{\textrm{GW}}h^{2}$, see figure \ref{fig:omega}. This quantity has one \emph{aesthetic} advantage over the \emph{others:} it automatically accounts for there \emph{being} less energy in \emph{lower} frequency waves of the same amplitude, and \emph{it does not} place the sensitivity curves of puslar timing arrays much higher than ground based detectors. However, the area between the source and detector curves is not simply related to the \emph{signal-to-noise} ratio \emph{and} the scale of the \emph{ordinate} axis is not related in any simple way to \emph{either} the amplitude of the GWs or the noise in the detector.
-
-\subsection{Stochastic backgrounds from binaries}
-
-\emph{Probably needs restructuring}
-
-Aside from inspirals another important detectable form of gravitational waves is a stochastic background due to a population of individually unresolvable binaries. A background is best described in terms of the energy density in gravitational waves. The population of sources will in general be at cosmological distances, in which case we need to distinguish the frequency in the source rest frame, $f_{r}$, from the measured frequency, $f$, via the redshift, $f_{r}=(1+z)f$. The comoving number density of sources producing the background will also be a function of redshift, $n(z)$. If the sources producing the stochastic background are all in the local universe, as is the case for the background of unresolvable white dwarf galactic binaries, then simply set $n(z)=\delta (z)$ in all that follows. Equation \ref{eq:omega} gives an expression for the energy density per logarithmic frequency interval,
-\begin{equation}\label{eq:stoch} fS_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G}f^{2}h_{c}^{2} \quad . \end{equation}
-Equation \ref{eq:stoch} relates the characteristic strain to the energy density which in turn depends on the gravitational wave amplitude, hence (\ref{eq:stoch}) is the vociferosity relation for a stochastic background. The fact that $h_{c}$ is given in terms of an energy density averaged over some region of space and not as a simple function of $h_{0}$ reflects the stochastic nature of the source. Let the total outgoing energy emitted in gravitation waves between frequencies $f_{r}$ and $f_{r}+\textrm{d}f_{r}$ by a single binary in our population be $\frac{\textrm{d}E_{\textrm{GW}}}{\textrm{d}f_{r}}\textrm{d}f_{r}$, then the energy density may be written as,
-\begin{equation}\label{eq:Phinney} fS_{\textrm{E}}(f)=\int_{0}^{\infty}dz\; \frac{\textrm{d}n}{\textrm{d}z}\frac{1}{1+z}\frac{\textrm{d}E_{\textrm{GW}}}{\textrm{d}\left(\log f\right)} \quad . \end{equation}
-For simplicity consider all the binaries comprising our background to be in circular orbits with frequencies $\nu=f_{r}/2$, and to be far from their last stable orbit so the quadrapole approximation holds. The chirp mass is defined as ${\cal{M}}=\mu^{3/5}M^{2/5}$, where $\mu$ is the reduced mass and $M$ the total mass. \cite{Thorne} gives the energy in gravitational waves from a single binary per logarithmic frequency interval,
-\begin{equation} \frac{\textrm{d}E_{\textrm{GW}}}{\textrm{d}\left(\log f \right)}=\frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{r}^{2/3} \quad . \end{equation}
-An expression for characteristic strain can now be found (see, for example, \cite{SesanaVecchioColancino}).
-\begin{equation}
-h_{c}(f)^{2}=\frac{4G}{\pi c^{2}f^{2}}\int_{0}^{\infty}\textrm{d}z\;\int_{0}^{\infty}\textrm{d}{\cal{M}}\;\frac{\textrm{d}^{2}n}{\textrm{d}z\,\textrm{d}{\cal{M}}}\;\frac{1}{1+z}\frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{r}^{2/3}
-\end{equation}
-\begin{equation}\label{eq:bigint}
-h_{c}(f)^{2} =\frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\textrm{d}z\;\int_{0}^{\infty}\textrm{d}{\cal{M}}\;\frac{\textrm{d}^{2}n}{\textrm{d}z\,\textrm{d}{\cal{M}}}\left( \frac{{\cal{M}}^{5}}{1+z} \right)^{1/3}
-\end{equation}
-From (\ref{eq:bigint}) it can be seen that the characteristic strain due to a stochastic background of binaries is a power law with index $\alpha=-2/3$. The amplitude of the background depends on the population statistics for the binaries under consideration and depends on the double integral in (\ref{eq:bigint}). The power law is usually parametrised as,
-\begin{equation}\label{eq:power} h_{c}(f)= A\left(\frac{f}{\textrm{yr}^{-1}}\right)^{\alpha} \end{equation}
-and constraints are then placed on $A$. In practice this power law will also have upper and lower frequency cut-offs related to the population of objects causing the spectra. The stochastic background due to other sources, such as cosmic strings or the reheating process, are also usually written in the same form as equation \ref{eq:power}, however they will have a different spectral indices, $\alpha$.
-
-\subsection{Burst sources}
-A signal is burst like if it's duration at a detectable amplitude is of order the wave period. If this is the case then the signal does not have time to accumulate signal to noise ratio in each frequency band in the way inspirals do. Hence the vociferosity relation is simply,
-\begin{equation}\label{eq:simple} h_{c}(f)=h_{0}(f) \quad . \end{equation}
+The critical density of the universe is $\rho_{c}=\frac{3H^{2}}{8\pi G}$, where $H$ is the Hubble constant, which is commonly parametrised as $H=h\times 100\, \textrm{km}\,\textrm{s}^{-1}\,\textrm{Mpc}^{-1}$ (the $h$ here has nothing to do with strain). The most common quatity related to energy density to be plotted on sensitivity curves is $\Omega_{\textrm{GW}}h^{2}$ (figure \ref{fig:omega}). This quantity has one aesthetic advantage over the others: it automatically accounts for the fact that there is less energy in low frequency waves of the same amplitude and does not place the sensitivity curves of puslar timing arrays much higher than most ground based detectors. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the signal-to-noise ratio.
 
 
