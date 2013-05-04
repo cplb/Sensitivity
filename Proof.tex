@@ -1,0 +1,16 @@
+\section{Expression for characteristic strain for inspirals}
+\label{app:b}
+Equation (\ref{eq:hc}) gives an expression for characteristic strain in terms of the Fourier transform;
+\begin{equation}\label{eq:FT} h_{c}(f)^{2}=4f^{2}\left| \tilde{h_{0}}(f) \right|^{2} \quad . \end{equation}
+For a source whose frequency evolves slowly with time the frequency may be expanded as a power series in $t$.
+\begin{equation}h_{0}(t)= h_{0}e^{2\pi i f(t)t} \; \textrm{, where} \; f(t) \approx f_{0}+\dot{f}t+{\cal{O}}(t^{2})\quad . \end{equation}
+Taking a Fourier transform gives
+\begin{eqnarray} 
+\tilde{h_{0}}(f)&=h_{0}\int_{\infty}^{\infty}\textrm{d}t\; e^{-2\pi i \left( (f-f_{0})-\dot{f}t \right)t} \nonumber\\
+&=h_{0}e^{-2\pi i \left( \frac{f-f_{0}}{2\dot{f}} \right)^{2}}\int_{\infty}^{\infty}\textrm{d}t\; 
+	e^{-2\pi i \dot{f}\left( t-\frac{f-f_{0}}{\dot{f}} \right)^{2}} \nonumber\\
+&=\frac{h_{0}e^{-2\pi i \left(\frac{f-f_{0}}{2\dot{f}}\right)^{2}}}{\sqrt{2 i \dot{f}}} \quad .
+\end{eqnarray}
+Finally using the result in (\ref{eq:FT}) gives
+\begin{equation} h_{c}(f)=\sqrt{\frac{2f^{2}}{\dot{f}}}h_{0} \quad . \end{equation}
+
