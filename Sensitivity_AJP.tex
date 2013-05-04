@@ -1,0 +1,100 @@
+\documentclass[prb,preprint]{revtex4-1} 
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+\newcommand{\Msun}{\ensuremath{M_{ \odot }}}
+
+\begin{document}
+
+
+\title{The full spectrum of gravitational wave sensitivity curves}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Christopher J.\ Moore}
+\email{cjm96@cam.ac.uk} % optional
+\author{Christopher P.\ L.\ Berry}
+\author{Robert H.\ Cole}
+\author{Jonathan R.\ Gair}
+\affiliation{Institute of Astronomy, University of Cambridge, Madingley Road, Cambridge, CB3 0HA, United Kingdom}
+
+
+\date{\today}
+
+\begin{abstract}
+When discussing the sensitivity of gravitational wave detectors there are several common conventions. These are frequently confused. We outline the merits of and differences between the various quantities used for parameterizing noise curves and characterizing gravitational wave amplitudes. We conclude by producing plots that consistently compare different detectors.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction} 
+
+\quote{``Differing weights and differing measures---the {\sc Lord} detests them both.'' (Proverbs 20:10)}
+
+\noindent{}Even the best of us can be frustrated by the use of different conventions or units when describing a single quantity. It is a common occurrence in physics that  there is a particular parameterization that is perfect for one experiment or calculation, but this is not of universal applicability. When comparing results across studies it is then necessary to trawl through the literature to check that $x$ is really the same parameter. Astronomy and astrophysics are rife with specialized units, from the jansky (a spectral flux density of $10^{-26}$ watts per square metre per hertz) to the solar neutrino unit (a neutrino flux that produces an interaction rate of $10^{-36}$ per second per target atom). Inevitably, things get lost in translation. The mismatch of conventions can be confusing to those new to the field, especially students.
+
+In this work we tackle the differing conventions common in gravitational wave astronomy. The amplitude of a gravitational wave is a strain, a dimensionless quantity. When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parameters based upon the starin: the characteristic strain, the power spectral density and the energy spectrum. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference to the new and old alike. 
+
+\begin{acknowledgments}
+CJM, CPLB and RHC are supported by STFC. JRG is supported by the Royal Society.
+\end{acknowledgments}
+
+
+\begin{thebibliography}{5}
+
+\end{thebibliography}
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}

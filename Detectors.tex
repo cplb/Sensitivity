@@ -1,0 +1,64 @@
+\newpage\section{Detectors}\label{sec:detectors}
+
+\subsection{Ground based detectors}
+The ground based detectors here all show the same characteristic shape. All these detectors have multiple narrow spikes in their sensitivity curves due, in part, to resonant frequencies in the suspension  systems used to isolate the mirrors, these have all been removed in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} for clarity. The detectors fall broadly into three categories\emph{: first, second and third} generation detectors. The first generation detectors include GEO600, TAMA, (initial) LIGO and (initial) VIRGO, the second generation detectors include (advanced) LIGO, KAGRA and (advanced) VIRGO and the Einstein Telescope is the only third generation detector discussed.
+
+\begin{table}[h!]
+\label{table:1}
+\centering
+\begin{tabular}{ c c c c c }
+\hline
+{\bf Detector} & {\bf Country} & {\bf Arm length} & {\bf Date} & {\bf Reference} \\
+\hline
+  GEO600 	& Germany 	& $600\,\textrm{m}$ 	& 2001-present			& \citet{Sathyaprakash} \\
+  TAMA300 	& Japan		& $300\,\textrm{m}$ 	& 1995-present			& \citet{Sathyaprakash} \\
+  iLIGO 	& US 		& $4\,\textrm{km}$ 	& 2004-2010 			& \citet{Sathyaprakash} \\
+  iVIRGO		& Italy		& $3\,\textrm{km}$ 	& 2007-??			& \citet{Sathyaprakash} \\
+  aLIGO 	& US		& $4\,\textrm{km}$ 	& \emph{est.} 2015	 	& \citet{Sathyaprakash} \\
+  KAGRA 	& Japan 	& $3\,\textrm{km}$ 	& \emph{est.} 2018	 	& KAGRA website \\
+  aVIRGO	& Italy 	& $3\,\textrm{km}$ 	& \emph{est.} 2015	 	& VIRGO website \\
+  ET 		& Italy		& $10\,\textrm{km}$ 	& Unknown 			& \citet{Sathyaprakash} \\
+\hline
+\end{tabular}
+\caption{A list of ground based detectors. For 6 of the detectors simple analytic fits to the sensitivity curves due to \citet{Sathyaprakash} were used (these fits do not include the resonance spikes). For KAGRA an interpolation to the data for version D of the detector published on \citet{KAGRAwebsite} was used with the resonance spikes smoothed. For aVIRGO an interpolation to the data published on.}
+\end{table}
+
+
+
+
+\subsection{Space based detectors}
+Launching interferometers into space allows the arms to be longer and removes the problem of seismic noise at low frequencies. Various detectors with differing number of satellites, numbers of laser arms, arms lengths etc have been proposed. The most studied is the classic LISA mission. Here we divide the proposed mission into two classes; the milli-Hz detectors LISA and eLISA, and the deci-Hz detectors DECIGO and BBO.
+\subsubsection{LISA and eLISA}
+The laser interferometer space antenna (LISA) consists of three satellites in an equilateral triangle configuration. We use an analytic fit to the instrumental noise curve given by \cite{Sathyaprakash}. As described in \cite{Sathyaprakash} for observing individual sources there is an additional contribution to the noise from a background of unresolvable binaries, this is not included in for consistency with the other detectors plotted. eLISA is a re-scoped version of the classic LISA mission with slightly reduced sensitivity and peak sensitivity shifted to higher frequencies. We use an analytic fit to the instrumental noise curve given by \cite{DoingScienceWitheLISA}.
+\subsubsection{DECIGO and BBO}
+These missions are designed to probe the decihertz region of the gravitational wave spectrum, both are considerably more ambitious than the LISA or eLISA mission and are likely to be launched much further into the future. Here simple analytic fits to the sensitivity curved given by \cite{2011PhRvD..83d4011Y} are used.
+
+
+
+
+
+\subsection{Pulsar timing arrays}
+Pulsar timing arrays can be thought of a naturally occuring interferometers with galactic scale arm lengths, hence they are sensitive to much lower frequencies than either the ground or space based detectors already considered.
+Each pulsar is a very regular clock and the measured arrival time can be compared against a prediction leaving a residual which includes the effects of passing gravitational waves. \cite{SesanaVecchioColancino} describe the shape of the sensitivity curves obtained by correlating the timing residuals from each of the $N_{p}$ pulsars in the array. Let the total timing residual, $\delta t$, be the sum of the residuals due to noise, $\delta t _{n}$, and due to gravitational waves, $\delta t_{h}$.
+\begin{equation} \delta t= \delta t_{n} + \delta t _{h} \end{equation}
+An upper limit to any background may be placed by assuming the residuals are due entirely to gravitational waves. First considering the simple case of two pulsars at a distance $d$ and with $\delta t_{h}\approx h_{0}d/c\approx h_{0}/f$ gives,
+\begin{equation} h^{2}\Omega_{\textrm{GW}}(f) \propto \frac{\delta t^{2}_{\textrm{r.m.s.}}f^{4}}{\sqrt{T\Delta f}} \end{equation}
+With larger values of $N_{p}$ each sperate pair of pulsars forms an independent detector, so the number of detectors scales as $N_{p}^{2}$. The optimum signal to noise ratio is given by the combination of all the detectors, the individual signal to noise ratios add in quadrature. So assuming each pair of pulsars in our array is an identical detector gives,
+\begin{equation} h^{2}\Omega_{\textrm{GW}}(f) \propto \frac{\delta t^{2}_{\textrm{r.m.s.}}f^{4}}{N_{p}\sqrt{T\Delta f}} \quad . \end{equation}
+This can be related to the characteristic strain using (\ref{eq:omega}),
+\begin{equation}\label{eq:PTA} h_{c}(f) \propto \frac{\delta t_{\textrm{r.m.s.}}f}{N_{p}^{1/2}\left( T\Delta f \right)^{1/4}} \quad . \end{equation}
+The characteristic strain the detector is sensitive to scales linearly with $f$ down to a minimum frequency of $T^{-1}$ (there is also an upper cut-off determined by the frequency of the pulsar observations). This gives the wedge shaped curves plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega}. The absolute values of the sensitivity is fixed by normalising (\ref{eq:PTA}) to agree with a limit at a given frequency for each array.
+
+\subsubsection{EPTA/PPTA/nanograv}
+The currently operating pulsar timing arrays are the European pulsar timing array (EPTA), the Parkes pulsar timing array (PPTA) and the North American nanohertz observatory for gravitational waves (nanograv). There are published limits on the amplitude of the stochastic background from all three detectors, the lowest currently is from the EPTA. For the EPTA limit see \cite{Haasteren}, for the PPTA limit see \cite{PPTA} and for the nanograv limit see \cite{NANOgrav}. The EPTA curves in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} shows the limit published in \cite{Haasteren} based on an analysis of 7 pulsars over approximately 10 years.
+
+\subsubsection{IPTA}
+The international pulsar timing array (IPTA) is a planned combination of the three existing pulsar timing arrays using approximately 30 pulsars. The curves plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} are based on 3 times as many pulsars as the EPTA curves and timed for twice as long. Mock data challenges for the IPTA have already been undertaken, see \cite{2013arXiv1301.6673V}.
+
+\subsubsection{SKA}
+Following \cite{SesanaVecchioColancino} it is assumed that the SKA is able to measure $\delta t^{2}_{\textrm{r.m.s.}}$ a factor of 10 better than the current pulsar timing arrays, the curves drawn in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} are based on 3 times as many pulsars timed for 5 times as long as the current EPTA curves.
+
+
+
+
+
