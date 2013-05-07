@@ -2,6 +2,9 @@
 \usepackage{iopams}  
 
 \newcommand{\Msun}{\ensuremath{M_{ \odot }}}
+\newcommand{\dd}{\ensuremath{\mathrm{d}}}
+\newcommand{\sub}[1]{\ensuremath{_\mathrm{#1}}}
+\newcommand{\super}[1]{\ensuremath{^\mathrm{#1}}}
 
 \begin{document}
 
@@ -40,46 +43,235 @@ h_{0} = \sqrt{\left< h_{+}^{2}+h_{\times}^{2} \right>} = \frac{1}{2}\left( \math
 \end{equation}
 where the angle brackets define averaging over all directions and over a wave period (the factor of $1/2$ comes from time averaging).
 
-Whilst the average strain $h_0$ provides a simple quantification of the GW amplitude, it has several deficiencies. 
+Whilst the average strain $h_0$ provides a simple quantification of the GW amplitude, it has several deficiencies. For an inspiralling source, the instantaneous amplitude can be orders of magnitude below the noise level; however, as the signal continues over many orbits, the signal-to-noise ratio (SNR) $\varrho$ can be integrated up to a detectable level. This accumulation of signal strength is not accounted for.
+
+Additionally, it would be desirable that when detector noise curves and source spectra are plotted together, their relative heights gives a measure of the sources' detectability.
+
 
 \subsection{Characteristic strain}
 
-A source of GWs radiates in two polarisation states with amplitudes $h_{+}$ and $h_{\times}$; the sensitivity of our detector to each of these states will depend upon the relative orientations of the source and detector. The most obvious quantity related to the detectability of a GW is the average strain amplitude,
-\begin{equation}\label{eq:h0} h_{0}=\sqrt{\left< h_{+}^{2}+h_{\times}^{2} \right>}=\frac{1}{2}\left( \textrm{ r.m.s. amplitude } \right) \quad.\end{equation}
-The angled brackets define averaging over all directions and over a wave period (the factor of $1/2$ comes from time averaging). This average strain does \emph{not} meet the criteria described above: for an inspiralling source the instantaneous amplitude can be well below the noise level in the detector even when the source is still detectable. This apparent discrepancy is because the inspiral continues over many orbits which allows the signal-to-noise ratio, $\varrho$, to accumulate to a detectable level. To account for this the \emph{characteristic strain}, $h_{c}$, is defined as
-\begin{equation}\label{eq:hc} 
-\varrho_{\textrm{r.m.s.}}^{2}= \int_{0}^{\infty}\textrm{d}f\; \frac{4\left|\tilde{h_{0}}(f)\right|^{2}}{S_{n}(f)} =\int_{-\infty}^{\infty} \textrm{d}\left(\log f\right)\; \left(\frac{h_{c}(f)}{h_{n}(f)}\right)^{2} \quad,
+The characteristic strain $h\sub{c}$ is designed to include the effect of integrating an inspiralling signal. It can defined in relation to the SNR $\varrho$ through
+\begin{equation}\label{eq:hc}
+\varrho_{\textrm{r.m.s.}}^{2}
+= \int_{0}^{\infty}\dd f\; \frac{4\left|\tilde{h_{0}}(f)\right|^{2}}{S_{n}(f)} =
+\int_{-\infty}^{\infty} \dd\left(\log f\right)\; \left(\frac{h_{c}(f)}{h_{n}(f)}\right)^{2}.
 \end{equation}
-where $h_{n}$ is the detector's sky averaged r.m.s. noise in a bandwidth equal to $f$. This is related to the sky averaged \emph{one-sided} noise power spectral density by
-\begin{equation}\label{eq:powerspectraldensity} S_{n}(f)=\frac{h_{n}(f)^{2}}{f} \quad . \end{equation}
-An alternative convention is to use the \emph{two-sided} power spectral density, $S^{(2)}_{n}(f)=\frac{1}{2}S_{n}(f)$. To complete the picture it is necessary to relate the two strains, $h_{c}$ and $h_{0}$, in a manner which satisfies (\ref{eq:hc}). The means to do this will depend upon the source. In attempting to plot all sources on the same diagram it is necessary to have a consistent convention for $h_{c}$. The important relationship between $h_{c}$ and $h_{0}$ is derived for various types of source in section \ref{sec:voc}. It should be noted that the strain amplitudes $h_{0}$, $h_{c}$ and $h_{n}$ are all dimensionless, while $S_{n}$ has units of inverse frequency. 
+Here $h_{n}$ is the detector's sky averaged r.m.s.\ noise in a bandwidth equal to $f$, and $S_n(f)$ is the sky-averaged one-sided power spectral density.\footnote{An alternative convention is to use the two-sided power spectral density $S^{(2)}_{n}(f)=\frac{1}{2}S_{n}(f)$.} The power spectral density is defined through time averaging the noise spectrum
+\begin{equation}
+\left<\tilde{n}(f)\tilde{n}^*(f')\right> = \frac{1}{2}S_n(f)\delta(f-f'),
+\end{equation}
+and is related to $h_n(f)$ by
+\begin{equation}\label{eq:powerspectraldensity}
+S_{n}(f)=\frac{h_{n}(f)^{2}}{f}.
+\end{equation}
+The relationship between the two strains, $h\sub{c}$ and $h_{0}$ depends upon the source. This is derived in section~\ref{sec:voc}.
 
-One sensible choice of quantities to plot on a sensitivity curve is $h_{n}$ for the detector and $h_{c}$ for the source (see figure \ref{fig:hc}). Using this convention the area between the source and detector curves is related to the signal-to-noise ratio via (\ref{eq:hc}). This convention allows the reader to ``integrate by eye" for a given detector to see how detectable a given source is. An additional advantage of this convention is that the values on the strain axis for the detector curve correspond to the noise amplitude in the detector. One downside to plotting characteristic strain is that the values on the strain axis do not directly relate to the amplitude of the waves from the source.
+The strain amplitudes $h_{0}$, $h\sub{c}$ and $h_{n}$ are all dimensionless, while $S_{n}$ has units of inverse frequency.
+
+One sensible choice of quantities to plot on a sensitivity curve is $h_{n}$ for the detector and $h\sub{c}$ for the source (see fig.~\ref{fig:hc}). The area between the source and detector curves is related to the SNR via (\ref{eq:hc}); this allows the reader to integrate by eye to estimate the detectability of a given source for plots with $\log f$ as the abscissa.
+
+An additional advantage of this convention is that the values on the strain axis for the detector curve correspond to the noise amplitude in the detector. One downside to plotting characteristic strain is that the values on the strain axis do not directly relate to the amplitude of the waves from the source.
 
 
 \subsection{Power spectral density}\label{sec:psd}
-Another common quantity to plot on sensitivity curves for both detectors and sources is the square root of the power spectral density (see figure \ref{fig:S}), which from (\ref{eq:powerspectraldensity}) is given by
-\begin{equation}\label{eq:temp1} \sqrt{S_{n}(f)}=h_{n}(f)f^{-1/2} \quad .\end{equation}
-This quantity has one advantage over characteristic strain: integrating $S_{n}$ (multiplied by the detector response function, which is typically of order unity) over all frequencies gives the mean square noise strain in the detector. Let $n(t)$ be the instantaneous noise strain, due to a background say, and it's Fourier transform $\tilde{n}(f)$. The Fourier transform of the measured noise in the detector is given by the noise times a frequency response function, $\tilde{N}(f)={\cal{R}}(f)\tilde{n}(f)$. The mean square noise amplitude in the detector is then given by
-\begin{eqnarray} \label{eq:meansquare}
-\left< N^{2} \right> &= \lim_{\tau \rightarrow \infty} \frac{1}{2\tau} \int_{-\tau}^{\tau}\textrm{d}t\; N(t)^{2} \nonumber \\
-&=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}\int_{0}^{\infty}\textrm{d}f\;\left|\tilde{N}(f)\right|^{2} \nonumber\\
-&= \int_{0}^{\infty}\textrm{d}f\; S_{n}(f){\cal{R}}(f)^{2} \quad ,
-\end{eqnarray}
+
+Another common quantity to plot on sensitivity curves for both detectors and sources is the square root of the power spectral density (see fig.~\ref{fig:S}), which from (\ref{eq:powerspectraldensity}) is given by
+\begin{equation}
+\label{eq:temp1}
+\sqrt{S_{n}(f)} = h_{n}(f)f^{-1/2}.
+\end{equation}
+This quantity has one advantage over characteristic strain: integrating $S_{n}$ (multiplied by the detector response function, which is typically of order unity) over all frequencies gives the mean square noise strain in the detector. Let $n(t)$ be the instantaneous noise strain, due to a background say, and it's Fourier transform $\tilde{n}(f)$. The Fourier transform of the measured noise in the detector is given by the noise times a frequency response function, $\tilde{N}(f) = {\cal{R}}(f)\tilde{n}(f)$. The mean square noise amplitude in the detector is then given by
+\begin{align} \label{eq:meansquare}
+\left< N^{2} \right> = {} & \lim_{\tau \rightarrow \infty} \frac{1}{2\tau} \int_{-\tau}^{\tau}\dd t\; N(t)^{2} \nonumber \\
+ = {} & \lim_{\tau\rightarrow\infty}\frac{1}{\tau}\int_{0}^{\infty}\dd f\;\left|\tilde{N}(f)\right|^{2} \nonumber\\
+ = {} & \int_{0}^{\infty}\dd f\; S_{n}(f){\cal{R}}(f)^{2},
+\end{align}
 using the Wiener-Kinchin theorem. Where the power spectral density is defined by
-\begin{equation}\label{eq:ps} S_{n}(f)=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}\left|\tilde{n}(f)\right|^{2} \quad . \end{equation}
+\begin{equation}\label{eq:ps}
+S_{n}(f) = \lim_{\tau\rightarrow\infty}\frac{1}{\tau}\left|\tilde{n}(f)\right|^{2}.
+\end{equation}
 Comparing (\ref{eq:ps}) with (\ref{eq:temp1}) gives the noise strain in terms of the Fourier transform.
-\begin{equation} h_{n}(f)^{2}=\lim_{\tau\rightarrow\infty}\frac{1}{\tau}f\left| \tilde{n}(f) \right|^{2} \end{equation}
-Equation (\ref{eq:meansquare}) is the reason $\sqrt{S_{n}}$ is sometimes called the strain noise, \cite{Phinney}. This is the most commonly used quantity on sensitivity curves. However in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the signal-to-noise ratio.
+\begin{equation}
+h_{n}(f)^{2} = \lim_{\tau\rightarrow\infty}\frac{1}{\tau}f\left| \tilde{n}(f) \right|^{2}
+\end{equation}
+Equation (\ref{eq:meansquare}) is the reason $\sqrt{S_{n}}$ is sometimes called the strain noise, \citet{Phinney}. This is the most commonly used quantity on sensitivity curves. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the SNR.
 
 \subsection{Energy density}
-A third quantity which is sometimes used is the spectral energy density in GWs, $S_{\textrm{E}}$ (not to be confused with $S_{h}$ defined in section \ref{sec:psd}). The spectral energy density is the energy per unit volume, per unit frequency and is related to $S_{h}$ via
-\begin{equation}\label{eq:spectralenergydensity} S_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \quad , \end{equation}
-\cite{HellingsDowns}. It is usual to define the dimensionless quantity $\Omega_{\textrm{GW}}$ as the energy density per logarithmic frequency interval normalised to the critical density of the universe,
+
+A third quantity which is sometimes used is the spectral energy density in GWs $S\sub{E}$ . To characterise a detector, the spectral is related to $S_{h}$ via \citep{HellingsDowns}
+\begin{equation}\label{eq:spectralenergydensity}
+S_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f).
+\end{equation}
+It is usual to define the dimensionless quantity $\Omega_{\textrm{GW}}$ as the energy density per logarithmic frequency interval normalised to the critical density of the universe,
 \begin{equation}\label{eq:omega} 
 \Omega_{\textrm{GW}}(f)=\frac{fS_{\textrm{E}}(f)}{\rho_{c}c^{2}}=\frac{\pi}{4G\rho_{c}}f^{2}h_{c}(f)^{2}=\frac{\pi}{4G\rho_{c}}f^{3}S_{h}(f)  \quad .
 \end{equation}
-The critical density of the universe is $\rho_{c}=\frac{3H^{2}}{8\pi G}$, where $H$ is the Hubble constant, which is commonly parametrised as $H=h\times 100\, \textrm{km}\,\textrm{s}^{-1}\,\textrm{Mpc}^{-1}$ (the $h$ here has nothing to do with strain). The most common quatity related to energy density to be plotted on sensitivity curves is $\Omega_{\textrm{GW}}h^{2}$ (figure \ref{fig:omega}). This quantity has one aesthetic advantage over the others: it automatically accounts for the fact that there is less energy in low frequency waves of the same amplitude and does not place the sensitivity curves of puslar timing arrays much higher than most ground based detectors. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the signal-to-noise ratio.
+The critical density of the universe is $\rho_{c} = 3H_0^{2}/{8\pi G}$, where $H_0$ is the Hubble constant, which is commonly parametrised as $H_0 = h_{100}\times 100~\textrm{km}\,\textrm{s}^{-1}\,\textrm{Mpc}^{-1}$.
+
+The most common quantity related to energy density to be plotted on sensitivity curves is $\Omega_{\textrm{GW}}h_{100}^{2}$ (fig.~\ref{fig:omega}). This quantity has one aesthetic advantage over the others: it automatically accounts for the fact that there is less energy in low frequency waves of the same amplitude and does not place the sensitivity curves of pulsar timing arrays much higher than most ground based detectors. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the signal-to-noise ratio.
+
+\section{Types of source}\label{sec:voc}
+
+\subsection{Inspirals}\label{sec:insp}
+
+Inspiralling binaries spend a variable amount of time in each frequency band. If $\phi$ is the orbital phase then the number of cycles generated at frequency $f$ is given by
+\begin{equation}\label{eq:inspiral}
+\frac{f}{2\pi}\frac{\dd\phi}{\dd f} = \frac{f^{2}}{\dot{f}},
+\end{equation}
+where an overdot represents the time derivative. \citet{FinnThorne} used this to define the characteristic strain for inspirals as
+\begin{equation}\label{eq:hc1}
+h\sub{c}(f) = h_{0}\sqrt{\frac{2f^{2}}{\dot{f}}}.\end{equation}
+The factor of two arises from a more careful treatment which is given in \ref{app:b}.
+Equation~(\ref{eq:hc1}) is the relation between $h_{c}$ and $h_{0}$ for an inspiralling source  
+
+\subsection{Stochastic backgrounds}
+
+Another important source of GWs are stochastic backgrounds due to populations of individually unresolvable binaries.
+
+The population of sources will in general be at cosmological distances and it is necessary to distinguish the measured frequency $f$ from the frequency in the source rest frame $f_{z} (1+z)f$.
+
+The comoving number density of sources, $n$, producing the background will also be a function of redshift; if the sources producing the stochastic background are all in the local universe then simply set $n(z) = \delta (z)$ in all that follows. Equation~(\ref{eq:omega}) gives an expression for the energy density per logarithmic frequency interval,
+\begin{equation}\label{eq:stoch}
+fS_{\textrm{E}}(f) = \frac{\pi c^{2}}{4G}f^{2}h_{c}(f)^{2}.
+\end{equation}
+The total energy emitted in GWs between frequencies $f_{z}$ and $f_{z}+\textrm{d}f_{z}$ by a single binary in the population is $\dd E\sub{GW}/\ddf_{z}}\dd f_{z}$; the energy density may be written as
+\begin{equation}\label{eq:Phinney}
+fS\sub{E}(f) = \int_{0}^{\infty}\dd z\; \frac{\dd n}{\dd z}\frac{1}{1+z}\frac{\dd E\sub{GW}}{\dd\left(\log f_{z} \right)},
+\end{equation}
+where the factor of $\left( 1+z \right)^{-1}$ accounts for the redshifted energy.
+
+For simplicity consider all the binaries comprising our background to be in circular orbits with frequencies $\nu = f_{z}/2$, and to be far from their last stable orbit so that the quadrapole approximation holds. The chirp mass is defined as ${\cal{M}} = \mu^{3/5}M^{2/5}$, where $\mu$ is the reduced mass and $M$ is the total mass of the binary. The number density of sources will also be a function of chirp mass, $n(z,{\cal{M}})$. \citep{Thorne} gives the energy in GWs from a single binary per logarithmic frequency interval as
+\begin{equation}\label{eq:Thorne}
+\frac{\dd E\sub{GW}}{\dd\left(\log f_z \right)} = \frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{z}^{2/3}.
+\end{equation}
+Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}), an expression for characteristic strain can now be found \citep{SesanaVecchioColancino},
+\begin{equation}\label{eq:bigint}
+h\sub{c}(f)^{2}=\frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\textrm{d}z\;\int_{0}^{\infty}\textrm{d}{\cal{M}}\;\frac{\textrm{d}^{2}n}{\textrm{d}z\,\textrm{d}{\cal{M}}}\left( \frac{{\cal{M}}^{5}}{1+z} \right)^{1/3}.
+\end{equation}
+From (\ref{eq:bigint}) it can be seen that the characteristic strain due to a stochastic background of binaries is a power law in frequency with spectral index $\alpha = -2/3$. The amplitude of the background depends on the population statistics of the binaries under consideration via $n(z,{\cal{M}})$. The power law is usually parametrised as
+\begin{equation}\label{eq:power}
+h\sub{c}(f)= A\left(\frac{f}{f_{0}}\right)^{\alpha},
+\end{equation}
+and constraints are then placed on $A$. In practice this power law will also have upper and lower frequency cut-offs related to the population of objects causing the spectra. The stochastic background due to other sources, such as cosmic strings or the reheating process, are also usually written in the same form as (\ref{eq:power}), but they will have a different spectral indices.
+
+\subsection{Burst sources}
+
+A signal is burst-like if it's duration at a detectable amplitude is of the same order as the wave period. If this is the case then the signal does not have time to accumulate signal-to-noise in each frequency band in the way inspirals do. Hence the relation between $h\sub{c}$ and $h_{0}$ is simply
+\begin{equation}\label{eq:simple}
+h\sub{c}(f) = h_{0}(f).
+\end{equation}
+
+\section{Detectors}\label{sec:detectors}
+
+\subsection{Ground based detectors}
+
+The interferometric detectors listed in Table~\ref{table:t} are sensitive to GWs in the frequency range ${\cal{O}}(10-10^{3})\,\textrm{Hz}$. They all have multiple narrow spikes in their sensitivity curves due, in part, to resonant frequencies in the suspension systems used to isolate the mirrors: these have been removed in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} for clarity. The detectors fall broadly into three categories: 1\textsuperscript{st} generation detectors which have already begun operating, 2\textsuperscript{nd} generation detectors currently under construction and 3\textsuperscript{rd} generation detectors at the planning stage. 
+
+\begin{table}[h!]
+\caption{\label{table:t} For the aVIRGO sensitivity curve an interpolation to the data published on \url{https://wwwcascina.virgo.infn.it/advirgo/}(2013) was used. For KAGRA an interpolation to the data for version D of the detector published on \url{http://gwcenter.icrr.u-tokyo.ac.jp/en/researcher/parameter}(2013) was used. For the remaining detectors simple analytic fits to the sensitivity curves due to \cite{Sathyaprakash} were used.}
+\begin{indented}
+\item[]\begin{tabular}{ l l l l l }
+\br
+{\bf Detector} & {\bf Country} & {\bf Arm length} & {\bf  Approximate date} & {\bf Generation} \\
+\mr
+  GEO600 	&	Germany 	& $600\,\textrm{m}$ 	& 2001-present 	   & 1$^{\textrm{st}}$\\
+  TAMA300 	& 	Japan		& $300\,\textrm{m}$ 	& 1995-present     & 1$^{\textrm{st}}$\\
+  iLIGO		&	US		& $4\,\textrm{km}$ 	& 2004-2010 	   & 1$^{\textrm{st}}$\\
+  iVIRGO	& 	Italy		& $3\,\textrm{km}$ 	& 2007-2010 	   & 1$^{\textrm{st}}$\\
+  aLIGO 	&	US		& $4\,\textrm{km}$ 	& \emph{est.} 2016 & 2$^{\textrm{nd}}$\\
+  KAGRA		&	Japan		& $3\,\textrm{km}$ 	& \emph{est.} 2018 & 2$^{\textrm{nd}}$\\
+  aVIRGO	&	Italy	 	& $3\,\textrm{km}$ 	& \emph{est.} 2017 & 2$^{\textrm{nd}}$\\
+  ET		&	Italy		& $10\,\textrm{km}$ 	& \emph{est.} 2025 & 3$^{\textrm{rd}}$\\
+\br
+\end{tabular}
+\end{indented}
+\end{table}
+
+
+
+
+\subsection{Space based detectors}
+Space based detectors are sensitive to lower frequency gravitational waves than their ground based counterparts. This is partly because space based detectors can have much longer arms and partly because they are unaffected by seismic noise which limits the low frequency performance of ground based detectors. The classic space based detector is LISA, all the sources discussed here lie within LISA's sensitivity curve. Here we divide the proposed missions into two classes: the milli-Hz detectors LISA and eLISA, and the deci-Hz detectors DECIGO and BBO.
+
+\subsubsection{LISA and eLISA}
+We use an analytic fit to the instrumental noise curve given by \cite{Sathyaprakash}. When observing individual sources with LISA there is an additional contribution to the noise from a background of unresolvable binaries. This is not included here as we consider the background as a source of GWs, see section \ref{sec:GB}. eLISA is a re-scoped version of the classic LISA mission with slightly reduced peak sensitivity shifted to higher frequencies. We use an analytic fit to the instrumental noise curve given by \cite{DoingScienceWitheLISA}.
+\subsubsection{DECIGO and BBO}
+These missions are designed to probe the decihertz region of the GW spectrum, both are considerably more ambitious than the LISA or eLISA mission and are likely to be launched further into the future. Here simple analytic fits to the sensitivity curves given by \cite{2011PhRvD..83d4011Y} are used.
+
+
+
+
+
+\subsection{Pulsar timing arrays}
+PTAs can be thought of as naturally occuring interferometers with galactic scale arm lengths, hence they are sensitive to much lower frequencies than the detectors considered so far.
+Each pulsar is a very regular clock and the measured arrival time can be compared against a prediction leaving a residual which includes the effects of passing GWs. \cite{SesanaVecchioColancino} describe the shape of the sensitivity curve obtained by correlating the timing residuals from each of the $N_{p}$ pulsars in the array. Let the total timing residual be the sum of the residuals due to noise and due to GWs,
+\begin{equation} \delta t= \delta t_{n} + \delta t _{h} \quad .\end{equation}
+An upper limit to any background may be placed by assuming the residuals are due entirely to GWs. First consider the case of two pulsars at distance $d$ and with $\delta t_{h}\approx h_{0}/f$. In this case the smallest detectable signal is
+\begin{equation} h^{2}\Omega_{\textrm{GW}}(f) \propto \frac{\delta t^{2}_{\textrm{r.m.s.}}f^{4}}{\sqrt{T\Delta f}} \quad , \end{equation}
+where $T$ is the observation time and $\Delta f$ the bandwidth of the search. When using more than two pulsars each separate pair of pulsars forms an independent detector, so the number of detectors scales as $N_{p}^{2}$. The optimum signal-to-noise ratio is given by adding the individual signal-to-noise ratios in quadrature. Hence the total sensitivity is given by
+\begin{equation} h^{2}\Omega_{\textrm{GW}}(f) \propto \frac{\delta t^{2}_{\textrm{r.m.s.}}f^{4}}{N_{p}\sqrt{T\Delta f}} \quad . \end{equation}
+This can be related to the characteristic strain using (\ref{eq:omega}),
+\begin{equation}\label{eq:PTA} h_{c}(f) \propto \frac{\delta t_{\textrm{r.m.s.}}f}{N_{p}^{1/2}\left( T\Delta f \right)^{1/4}} \quad . \end{equation}
+The characteristic strain that the PTA is sensitive to scales linearly with $f$ between a mimumum frequency of approximately $T^{-1}$ and a maximum frequency $\Delta T ^{-1}$, where $\Delta T$ is the gap between pulsar observations. This gives the wedge shaped curves plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega}. The absolute values of the sensitivity is fixed by normalising (\ref{eq:PTA}) to agree with a limit at a given frequency for each PTA.
+
+There is a discrepancy between the treatment of PTA sensitivity curves here and the sources for the higher frequency detectors discussed in section \ref{sec:sources}. When observing a long lived source with a high frequency detector the convention was to define a new \emph{characteristic} strain to satisfy (\ref{eq:hc}). Here the convention is to leave the strain untouched and instead move the PTA sensitivity curve to account for the length of observation time. This discrepancy is an unfortunate result of the conventions in use by the different GW communities.
+
+
+\subsubsection{EPTA/PPTA/NANOGrav}
+The PTAs currently in operation are the EPTA, PPTA and NANOGrav. There are published limits on the amplitude of the stochastic background from all three detectors: currently the lowest is from the EPTA, \cite{Haasteren}. The EPTA curves in the figures show the  published limit based on an analysis of 7 pulsars over approximately 10 years.
+
+\subsubsection{IPTA}
+Combining the existing arrays would yield a single PTS using approximately 30 pulsars. The curves plotted in the figures are based on 3 times as many pulsars as the EPTA curves and timed for twice as long.
+
+\subsubsection{SKA}
+Following \cite{SesanaVecchioColancino} it is assumed that the SKA is able to measure $\delta t^{2}_{\textrm{r.m.s.}}$ a factor of 10 better than the current PTAs, the curves drawn in the figures are based on 3 times as many pulsars timed for 5 times as long as the current EPTA curves.
+
+\section{Astrophysical sources}\label{sec:sources}
+All the sources described here are drawn as boxes in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega}. The boxes are drawn in such a way that there is a reasonable event rate for sources at a detectable signal-to-noise ratio. The exact description for each source is given in the corresponding section. We draw sources with short duration (i.e. burst sources) and sources which evolve in time over much longer timescales than our observations with flat topped boxes. Inspiralling sources which change their frequency over observable timescales are drawn with sloping tops. The slope for the top of the box is arbitrarily chosen as $-2/3$ which is also the exact gradient for the stochastic backgrounds of binaries. 
+
+
+
+
+\subsection{Sources for ground based detectors}
+Another potential source of GWs in this frequency range not discussed further here is rotating, non-spherical, neutron stars, see \cite{2013ASPC..467...59S}.
+
+\subsubsection{Neutron star binaries}
+The inspiral and merger of a pair of neutron stars is the primary target for ground based detectors. The detectable portion of the inspiral occurs over the last ${\cal{O}}(10)$ orbits, so to a reasonable aproximation it can be treated as a burst source. The typical strain generated by an event that released $E_{\textrm{GW}}$ at a distance $r$, centred around frequency $f$ and with a duration $\tau$ is given by \cite{2013ASPC..467...59S}.
+\begin{equation} h_{0}\approx 5\times 10^{-21}\left(\frac{E_{\textrm{GW}}}{10^{-7}\Msun c^{2}}\right)^{1/2}\left( \frac{\tau}{1\,\textrm{ms}} \right)^{-1/2}\left( \frac{f}{1\,\textrm{kHz}} \right)^{-1}\left( \frac{r}{10\,\textrm{kpc}} \right)^{-1} \end{equation}
+The expected event rate for this type of event is uncertain, but estimates centre around $\rho_{\textrm{NS-NS}}=10^{-6}\;\textrm{Mpc}^{-3}\textrm{yr}^{-1}$, \cite{2011PrPNP..66..239A}. Plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} is a box with an amplitude equal to an event releasing $10^{-4}\Msun c^{2}$ of energy, centred at a frequency of $100\,\textrm{Hz}$, over a period of $10\,\textrm{ms}$ and at a distance of $10\,\textrm{Mpc}$.
+
+\subsubsection{Supernovae}
+Simulations of GWs from a core collapse supernova event produce radiation of approximately $(10^{2}-10^{3})\,\textrm{Hz}$, \cite{2002A&A...393..523D}. The GW signal undergoes ${\cal{O}}(1)$ oscillation and hence is burst-like. \cite{2002A&A...393..523D} calculate the average maximum amplitude of GWs for a supernova at distance $r$ as
+\begin{equation} h_{0}=8.9\times 10^{-21}\left( \frac{10 \,\textrm{kpc}}{r} \right) \quad .\end{equation}
+Adopting an expected event rate for supernova of $\rho_{\textrm{SN}}=5\times10^{-4}\textrm{Mpc}^{-3}\textrm{yr}^{-1}$ (\cite{2013ASPC..467...59S}) a distance is chosen such that we expect one supernova per 10 years, $r\approx 3 \,\textrm{Mpc}$, this gives an amplitude of $h_{c}=10^{-22}$.
+
+
+
+
+\subsection{Sources for space based detectors}
+
+\subsubsection{Massive black hole binaries}
+Space based detectors will be sensitive to equal mass mergers in the range $(10^{4}-10^{7})\,\Msun$, \cite{JohnsLivingReview}. Predictions of the event rate for these megers range from ${\cal{O}}(1-100)\,\textrm{yr}^{-1}$ for LISA with signal-to-noise ratios of up to 1000. The uncertainty in this rate reflects our uncertainty in the growth mechanisms of the supermassive black hole population. Plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} is a box with signal-to-noise ratio of 100 for eLISA at it's peak sensitivity. The range of frequencies plotted is $(3\times 10^{-4}-3\times 10^{-1})\textrm{Hz}$, this corresponds to circular binaries in the mass range quoted above.
+
+\subsubsection{Galactic binaries} \label{sec:GB}
+These divide into two classes, the unresolvable and the resolvable galactic binaries. The distinction between resolvable and unresolvable is detector specific; here we choose LISA. This boundary will not be too different for eLISA but would move substantially for either of the decihertz detectors. For the unresolvable binaries the box plotted corresponds to the estimate of the background due to \cite{Nelemans},
+\begin{equation} h_{c}(f)= 5\times 10^{-21} \left(\frac{f}{10^{-3}\,\textrm{Hz}}\right)^{-2/3} \quad . \end{equation}
+For the resolvable binaries the event rates range from ${\cal{O}}(10^{4})$ for LISA to ${\cal{O}}(10^{3})$ for eLISA, \cite{JohnsLivingReview}. Signal-to-noise ratios for these events observed with eLISA will extend to above 50. The box plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} has a signal-to-noise ratio of 50 for eLISA at its peak sensitivity, the frequency range of the box is based on visual inspection of Monte Carlo population simulation results presented in \cite{DoingScienceWitheLISA}.
+
+\subsubsection{Extreme mass ratio inspirals}
+EMRI events occur when a compact stellar mass object inspirals into a supermassive black hole. There is extreme uncertainty in the event rate for EMRIs due to the poorly constrained astrophysics in galactic centres; event rate estimates per galaxy range from ${\cal{O}}(1-10^{3})\,\textrm{Gyr}^{-1}$ for black hole EMRIs and ${\cal{O}}(10-5000)\,\textrm{Gyr}^{-1}$ for white dwarf and neutron star EMRIs. The box plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} has a characteristic strain of $h_{c}=3\times 10^{-20}$ at $10^{-2}\;\textrm{Hz}$ which corresponds to a $10\Msun$ BH inspiralling into a $10^{6}\Msun$ supermassive black hole with a last stable orbital eccentricity of $e=0.3$ at a distance of $1\,\textrm{Gpc}$. The frequency width of the box is somewhat unknown, EMRI events can occur into a black hole of any mass, and hence EMRIs can occur at any frequency. However there is substantial uncertainty in the black hole mass function.
+
+
+
+
+\subsection{Sources for pulsar timing arrays}
+There are several interesting potential sources of GWs in this frequency band not discussed further here; for example cosmic strings and the reheating process.
+
+\subsubsection{Supermassive black hole binaries}
+The current best published limit for the amplitude of the stochastic background is $h_{c}=6\times 10^{-15}$ at frequency of $f_{0}=1\,\textrm{yr}^{-1}$, \cite{Haasteren}. There is strong theoretical evidence that the actual background lies close to the current limit, \cite{imminentdetectionofgravitationalwaves} and \cite{NONimminentdetectionofgravitationalwaves}. As the frequency increases the sources become less redshifted and hence louder until, at a certain frequency, they will cease to be a background and become individually resolvable. The exact distinction between resolvable and unresolvable is detector specific. Plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} for the unresolvable background is a third of the limit due to \cite{Haasteren} with a cut off frequency of $f=1\,\textrm{yr}^{-1}$ which is suggested by Monte Carlo population studies, \cite{SesanaVecchioColancino}. For the resolvable sources the exact limit due to \cite{Haasteren} is plotted.
+
+\section{Concluding remarks}\label{sec:discussion}
+As much frequency variation exists for GWs as exists in the electromagnetic spectrum, and a great variety of ingenious GW detectors have been designed and constructed. Trying to summarise an entire field of astronomy on one plot is an impossible task; however we hope that the figures and analysis presented here provide useful insight.
 
 \ack
 CJM, CPLB and RHC are supported by STFC. JRG is supported by the Royal Society.
@@ -87,6 +279,47 @@ CJM, CPLB and RHC are supported by STFC. JRG is supported by the Royal Society.
 \section*{References}
 %\begin{thebibliography}{10}
 %\end{thebibliography}
+\bibliography{bibliography}
+
+\appendix
+
+\section{Sensitivity curves}\label{app:a}
+
+The plots in this section show all of the detectors and sources described in the text. Interactive versions of these plots may be viewed online, \url{http://www.ast.cam.ac.uk/~rhc26/sources/}. The detector noise curves all have their resonance spikes removed for clarity. 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[trim=0cm 9.5cm 0cm 9cm, width=0.95\textwidth]{figure1.pdf}
+ \caption{A plot of characteristic strain against frequency for a variety of detectors and sources.}
+ \label{fig:hc}
+\end{figure}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[trim=0cm 9.5cm 0cm 9cm, width=0.95\textwidth]{figure2.pdf}
+ \caption{A plot of the square root of power spectral density against frequency for a variety of detectors and sources.}
+ \label{fig:S}
+\end{figure}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[trim=0cm 9.5cm 0cm 9cm, width=0.95\textwidth]{figure3.pdf}
+ \caption{A plot of the dimensionless energy density in GWs against frequency for a variety of detectors and sources.}
+ \label{fig:omega}
+\end{figure}
+
+\section{Expression for characteristic strain for inspirals}
+\label{app:b}
+Equation (\ref{eq:hc}) gives an expression for characteristic strain in terms of the Fourier transform;
+\begin{equation}\label{eq:FT} h_{c}(f)^{2}=4f^{2}\left| \tilde{h_{0}}(f) \right|^{2} \quad . \end{equation}
+For a source whose frequency evolves slowly with time the frequency may be expanded as a power series in $t$.
+\begin{equation}h_{0}(t)= h_{0}e^{2\pi i f(t)t} \; \textrm{, where} \; f(t) \approx f_{0}+\dot{f}t+{\cal{O}}(t^{2})\quad . \end{equation}
+Taking a Fourier transform gives
+\begin{eqnarray} 
+\tilde{h_{0}}(f)&=h_{0}\int_{\infty}^{\infty}\textrm{d}t\; e^{-2\pi i \left( (f-f_{0})-\dot{f}t \right)t} \nonumber\\
+&=h_{0}e^{-2\pi i \left( \frac{f-f_{0}}{2\dot{f}} \right)^{2}}\int_{\infty}^{\infty}\textrm{d}t\; 
+	e^{-2\pi i \dot{f}\left( t-\frac{f-f_{0}}{\dot{f}} \right)^{2}} \nonumber\\
+&=\frac{h_{0}e^{-2\pi i \left(\frac{f-f_{0}}{2\dot{f}}\right)^{2}}}{\sqrt{2 i \dot{f}}} \quad .
+\end{eqnarray}
+Finally using the result in (\ref{eq:FT}) gives
+\begin{equation} h_{c}(f)=\sqrt{\frac{2f^{2}}{\dot{f}}}h_{0} \quad . \end{equation}
 
 \end{document}
 
